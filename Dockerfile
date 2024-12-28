@@ -13,7 +13,7 @@ ENV ELIXIR_ERL_OPTIONS=$ELIXIR_ERL_OPTIONS MIX_ENV=$MIX_ENV NIXPACKS_METADATA=$N
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US:en
-ENV LC_ALL=en_US.UTF-8
+# ENV LC_ALL=en_US.UTF-8
 
 # is this set by a variable?
 ENV MIX_ENV=prod
@@ -40,7 +40,7 @@ RUN  mix assets.deploy
 # RUN  mix ecto.setup
 
 # start
-COPY . /app
+# COPY . /app
 
 CMD ["mix ecto.setup && mix phx.server"]
 
