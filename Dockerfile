@@ -37,10 +37,17 @@ COPY config /app/config
 COPY lib /app/lib
 RUN  mix compile
 RUN  mix assets.deploy
+# V2
+RUN mix release
 # RUN  mix ecto.setup
 
 # start
 # COPY . /app
 
-CMD ["mix ecto.setup && mix phx.server"]
+# V2
+RUN set -eux; \
+  ln -nfs /app/$(basename *)/bin/$(basename *) /app/entry
+
+# CMD ["mix ecto.setup && mix phx.server"]
+CMD ["mix ecto.setup && /app/entry start"]
 
