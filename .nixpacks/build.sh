@@ -1,0 +1,1 @@
+docker build . -f ./.nixpacks/Dockerfile -t 2283c9e2-f37c-4378-9d65-29536289876f --build-arg ELIXIR_ERL_OPTIONS=+fnu --build-arg MIX_ENV=prod --build-arg NIXPACKS_METADATA=elixir
