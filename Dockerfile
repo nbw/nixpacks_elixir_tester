@@ -44,6 +44,10 @@ RUN mix release
 # start
 # COPY . /app
 
+RUN ls _build
+
+COPY _build/prod/rel /app
+
 # V2
 RUN set -eux; \
   ln -nfs /app/$(basename *)/bin/$(basename *) /app/entry
